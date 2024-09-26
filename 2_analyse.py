@@ -4,8 +4,7 @@ st.title('Analysis page')
 
 import pandas as pd
 import plotly.express as px
-import plotly.graph_objects as go
-from pprint import pprint
+
 
 # prepare data
 # load csv into master_df, drop unnecessary columns
