@@ -1,4 +1,6 @@
 import streamlit as st
+import plotly.express as px
+# px usage seems to break streamlit cloud deployment, need to replace
 
 st.title('Analysis page')
 
