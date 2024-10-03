@@ -110,16 +110,23 @@ latest_year_months = len([date for date in month_range if date.year == latest_ye
 # print(f'Assuming {latest_year_months} months have passed in current year {latest_year}')
 # calculate monthly amounts
 cat_spendings_table['Monthly Spend'] = []
+cat_spendings_table['Weekly Spend'] = []
 for i in range(len(cat_spendings_table['Yearly/YTD Spend'])):
     year_amount = cat_spendings_table['Yearly/YTD Spend'][i]
-    if cat_spendings_table['Year'] == latest_year: # calculate # of months passed if latest year
+
+    # first calculate # of months passed if latest year
+    if cat_spendings_table['Year'] == latest_year:
         months = latest_year_months
+
     else:
+    # calculate monthly and weekly spend
         months = 12
     if year_amount: # if not an empty line
         cat_spendings_table['Monthly Spend'].append(year_amount / months)
+        cat_spendings_table['Monthly Spend'].append(year_amount / months * 12 / 52)
     else:
         cat_spendings_table['Monthly Spend'].append('')
+        cat_spendings_table['Weekly Spend'].append('')
 cat_spendings_table_df = pd.DataFrame(cat_spendings_table)
 cat_spendings_table_df = cat_spendings_table_df.round(2)
 # print('cat_spendings_table_df =\n', cat_spendings_table_df)
