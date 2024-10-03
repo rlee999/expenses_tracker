@@ -167,6 +167,7 @@ else:
 st.plotly_chart(cat_spending_year_fig)
 
 st.write('Monthly/yearly spendings of expenses = cat_spendings_table_df')
+st.write('Assumes months passed = {}'.format(months))
 st.dataframe(cat_spendings_table_df)
 
 st.write('expenses_df')
