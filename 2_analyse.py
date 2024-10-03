@@ -123,7 +123,7 @@ for i in range(len(cat_spendings_table['Yearly/YTD Spend'])):
         months = 12
     if year_amount: # if not an empty line
         cat_spendings_table['Monthly Spend'].append(year_amount / months)
-        cat_spendings_table['Monthly Spend'].append(year_amount / months * 12 / 52)
+        cat_spendings_table['Weekly Spend'].append(year_amount / months * 12 / 52)
     else:
         cat_spendings_table['Monthly Spend'].append('')
         cat_spendings_table['Weekly Spend'].append('')
